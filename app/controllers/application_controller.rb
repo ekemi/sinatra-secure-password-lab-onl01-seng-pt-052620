@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     if user.save
       redirect "/index"
     else
-      redirect "/signup"
+      erb :" Flatiron Bank Error"#redirect "/signup"
     end
 
   end
@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
     ##your code here
     user = User.find_by(:username => params[:username])
     if user && user.authenticate(:password => params[:password] )
-      session[:user_id] = user.id
+      session[:user_id] = user.id 
       redirect "/account"
     else
       redirect "/login"
