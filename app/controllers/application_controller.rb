@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     if user.save
       redirect "/index"
     else
-      erb :" Flatiron Bank Error"#redirect "/signup"
+      redirect "/signup"
     end
 
   end
